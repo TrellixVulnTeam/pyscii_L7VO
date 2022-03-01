@@ -16,6 +16,9 @@ def createUrl(textStyle : str, text : str):
     url = f"https://patorjk.com/software/taag/#p=display&f={textStyle}&t={text}"
     urlModified = String(url)
     urlModified.replace(" ", "%20")
+    urlModified.replace("\n", "%0A")
+    
+    
     
     return urlModified.getString()
 
