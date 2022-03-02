@@ -1,18 +1,24 @@
-import requests
 import urlGenerator as uG
-from bs4 import BeautifulSoup
+from selenium import webdriver
 
 def getASCII(siteURL : str):
-    reponse = requests.get(siteURL, headers={"User-Agent" : "XY"})
+    driverOptions = webdriver.FirefoxOptions()
     
-    if not reponse.ok:
-        return f"An error has occured (code error {reponse.status_code})"
+    try:
+        driverOptions.set_headless(headless=True)
+    except AttributeError:
+        driverOptions.add_argument("--headless")
     
-    soup = BeautifulSoup(reponse.text, features='html.parser')
+    driver = webdriver.Firefox(firefox_options=driverOptions)
     
-    asciiText = soup.find(class_='fig')
+    driver.get(siteURL)
+    asciiArt = driver.find_element_by_id("taag_output_text")
     
-    if not asciiText:
-        return None
+    if not asciiArt:
+        return ""
+        
+    return asciiArt.text
 
-    return asciiText.text
+
+a = getASCII("https://patorjk.com/software/taag/#p=display&f=Big&t=Type%20Something")
+print(a)
