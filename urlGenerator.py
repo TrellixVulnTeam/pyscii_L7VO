@@ -1,32 +1,11 @@
-class String:
-    
-    def __init__(self, stringContent : str):
-        self.stringContent = stringContent
-    
-    
-    def replace(self, toReplace : str, replacing : str):
-        return replacing.join(self.stringContent.split(toReplace))
-    
-    
-    def getString(self):
-        return self.stringContent
-
-
 def createUrl(textStyle : str, text : str):
-    url = f"https://patorjk.com/software/taag/#p=display&f={textStyle}&t={text}"
-    urlModified = String(url)
-    urlModified.replace(" ", "%20")
-    urlModified.replace("\n", "%0A")
-    
-    
-    
-    return urlModified.getString()
+    return f"https://patorjk.com/software/taag/#p=display&f={textStyle}&t={text}"
 
 
 if __name__ == "__main__":
     import sys
     import webbrowser
-    
+
     style = input("Enter text style : ")
     content = input("Enter text : ")
     
