@@ -1,0 +1,146 @@
+3D Diagonal
+Alpha
+Acrobatic
+Avatar
+Babyface Lame
+Babyface Leet
+Big Money-ne
+Big Money-nw
+Big Money-se
+Big Money-sw
+Big
+Blocks
+Bulbhead
+Cards
+Chiseled
+Crawford2
+Crazy
+Dancing Font
+Doh
+Doom
+Efti Wall
+Epic
+Fire Font-k
+Fire Font-s
+Flower Power
+Fun Face
+Fun Faces
+Ghost
+Graceful
+Graffiti
+Impossible
+Isometric1Isometric2Isometric3Isometric4
+JS Bracket Letters
+Lil Devil
+Merlin1
+Modular
+Ogre
+Patorjk's Cheese
+Patorjk-HeX
+Rectangles
+Slant
+Slant Relief
+Small
+Small Slant
+Small Isometric1
+Soft
+Standard
+Star Wars
+Sub-Zero
+Swamp Land
+Sweet
+Train
+Twisted
+Wet Letter
+Varsity
+
+
+3D-ASCII
+ANSI Regular
+ANSI Shadow
+Bloody
+Calvin S
+Delta Corps Priest 1
+Electronic
+Elite
+Stronger Than All
+THIS
+The Edge
+
+
+1Row3-D3x5
+4Max5 Line ObliqueAMC 3 LineAMC 3 Liv1
+AMC AAA01AMC NekoAMC Razor
+AMC Razor2AMC SlashAMC Slider
+AMC ThinAMC TubesAMC Untitled
+ASCII New RomanAlligator
+Alligator2AlphabetArrows
+
+BannerBanner3-D
+Banner3Banner4BarbwireBasic
+BearBellBenjaminBig Chief
+BigfigBinary
+BlockBolgerBraced
+BrightBroadway KBBroadwayBubble
+CaligraphyCaligraphy2
+CatwalkChunkyCoinstak
+ColaColossalComputerContessa
+ContrastCosmikeCrawford
+CricketCursiveCyberlarge
+CybermediumCybersmallCygnetDANC4
+DWhistled
+DecimalDef LeppardDiamondDiet Cola
+DigitalDot Matrix
+Double ShortsDoubleDr PepperEfti Chess
+Efti FontEfti ItalicEfti PitiEfti Robot
+Efti WaterFender
+FilterFlipped
+Four TopsFraktur
+FuzzyGeorgi16Georgia11
+GhoulishGlenynGoofy
+GothicGradient
+GreekHeart LeftHeart RightHenry 3D
+HexHieroglyphsHollywoodHorizontal Left
+Horizontal RightICL-1900Invita
+ItalicIvritJS Block Letters
+JS Capital CurvesJS CursiveJS Stick Letters
+JackyJazmineJerusalemKatakana
+KbanKeyboardKnob
+
+LCDLarry 3DLean
+LettersLine BlocksLinux
+LockergnomeMadridMarquee
+MaxfourMerlin2Mike
+MiniMirrorMnemonic
+MorseMoscowMshebrew210
+MuzzleNScriptNT GreekNV Script
+Nancyj-FancyNancyj-Underlined
+NancyjNipplesO8OS2
+OctalOld BannerPawp
+Peaks SlantPeaksPebblesPepper
+PoisonPuffyPuzzlePyramid
+Rammstein
+ReliefRelief2ReverseRoman
+
+RotatedRoundedRowan Cap
+RozzoRunicRunycS Blood
+SL ScriptSanta ClaraScriptSerifcap
+ShadowShimrodShort
+SlideSmall Caps
+Small KeyboardSmall PoisonSmall Script
+Small ShadowSmall Tengwar
+SpeedSpliff
+StaceyStampateStampatello
+Star StripsStellarStforek
+Stick LettersStopStraight
+SwanTanja
+TengwarTermTest1Thick
+ThinThornedThree PointTicks Slant
+TicksTilesTinker-ToyTombstone
+TrekTsalagiTubular
+Two PointUSA FlagUnivers
+WavyWeird
+WhimsyWow
+
+
+Abraxis-BigAbraxis-SmallBentBlestBoieBoie2Bone's FontCaMiZCeACeA2CheeseDaiRFilthFoGGGalactusGlueHeX's FontHellfireMeDiMerPsYPsY2Reeko Font 1RibbitRibbit2Ribbit3SonyTRaC MiniTRaC TinyTRaC's Old School FontTRaCTwiggyX-PoseX99X992Zodi
