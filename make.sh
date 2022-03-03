@@ -11,9 +11,15 @@ printf "
         |___/
 "
 
+if [[-d GeckoDriver]]; then
+        rm -rf ./GeckoDriver
+fi
+
+mkdir GeckoDriver
 cd ./GeckoDriver
+
 wget https://github.com/mozilla/geckodriver/releases/tag/v0.30.0/geckodriver-v0.30.0-linux64.tar.gz
-tar -C /usr/local/bin/ -xvf
+tar -C /usr/local/bin/ -xvf geckodriver-v0.30.0-linux64.tar.gz
 
 currentPath=$(pwd)
 export PATH=$PATH:$currentPath
