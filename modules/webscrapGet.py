@@ -1,10 +1,12 @@
+import requests
+
+from bs4 import BeautifulSoup
 from selenium import webdriver
 
-with open('./modules/textPolices.txt', 'r') as f:
-    fontList = f.read()
+import modules.urlGenerator as urlGenerator
 
 
-def getASCII(siteURL : str):
+def getAscii(siteURL : str):
     """Function to get ASCII art from a link
 
     Args:
@@ -34,6 +36,36 @@ def getASCII(siteURL : str):
     return asciiArt.text
 
 
+def getFontList() -> str():
+    """Function that returns all ASCII styles availible
+
+    Returns:
+        str: The ASCII styles list
+    """
+
+    with open('./modules/textPolices.txt', 'r') as f:
+        fontList = f.read()
+    
+    return fontList
+
+
+def generateAscii(style : str, text : str) -> str():
+    """Function that use previouses to generate ASCII art
+
+    Args:
+        style (str): The style you want to generate you ASCII art
+        text (str): The text you want to convert to ASCII art
+    
+    Returns:
+        asciiArt (str): The ASCII art generated
+    """
+
+    link = urlGenerator.createUrl(textStyle=style, text=text)
+    asciiArt = getAscii(link)
+
+    return asciiArt
+
+
 if __name__ == "__main__":
-    asciiArt = getASCII("https://patorjk.com/software/taag/#p=display&f=Big&t=PyScii")
+    asciiArt = getAscii("https://patorjk.com/software/taag/#p=display&f=Big&t=PyScii")
     print(asciiArt)
