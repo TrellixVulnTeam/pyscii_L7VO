@@ -23,3 +23,8 @@ tar -C /usr/local/bin/ -xvf geckodriver-v0.30.0-linux64.tar.gz
 
 currentPath=$(pwd)
 export PATH=$PATH:$currentPath
+
+mainFilePath=$currentPath/main.py
+
+printf "alias pysci='$mainFilePath'" > ~/.bashrc
+source ~/.bashrc

@@ -1,39 +1,55 @@
 import os
 import sys
+import argparse
+
 import termcolor
 
 import modules.webscrapGet as webscrapGet
-import modules.urlGenerator as urlGenerator
 
 
-if len(sys.argv) >= 2:
-    if sys.argv[1] in ['-h', '--help']:
-        print("HERE WILL BE HELP DOC\n")
-        sys.exit()
+parser = argparse.ArgumentParser(
+    description="A command that generates ascii art using https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something website"
+)
 
-if len(sys.argv) <= 3:
-    errorText = "[!] ARGS MISSING"
-    errorText = termcolor.colored(errorText, 'red')
-    print(f"{errorText}\n")
+parser.add_argument(
+    'asciiStyle',
+    metavar='s',
+    type=str,
+    help='The ASCII style you want, to see all styles run the command \'[command] stylelist\''
+)
+
+parser.add_argument(
+    'asciiText',
+    nargs='*',
+    default='',
+    help='The text you want to convert to ASCII art'
+)
+
+args = parser.parse_args()
+
+
+# To get the ASCII style list, use the command '[command] stylelist'
+if args.asciiStyle == 'stylelist' and not args.asciiText:
+    print(f"{webscrapGet.getFontList()}\n")
     sys.exit()
 
 
-asciiStyle = sys.argv[1].strip()
+if args.asciiStyle not in webscrapGet.getFontList():
+    if args.asciiStyle == 'stylelist':
+        errorText = termcolor.colored("[/!\\] To get the ASCII style list, use the command '[command] stylelist'\n", 'yellow')
+        print(errorText)
+        sys.exit(1)
 
-if asciiStyle not in webscrapGet.fontList:
-    print(f"[!] POLICE STYLE '{asciiStyle}' IS NOT EXISTING !\n")
-    sys.exit()
-
-
-text = ""
-for i in range(2, len(sys.argv)):
-    text += f"{sys.argv[i]} "
-
-url = urlGenerator.createUrl(asciiStyle, text)
-asciiText = webscrapGet.getASCII(url)
-
-print(f"{asciiText}\n")
+    errorText = termcolor.colored(f"[!] The style '{args.asciiStyle}' doesn't exists\n", 'red')
+    print(errorText)
+    sys.exit(1)
 
 
-if os.path.exists("./geckodriver.log"):
-    os.remove("./geckodriver.log")
+asciiText = webscrapGet.generateAscii(style=args.asciiStyle, text=" ".join(args.asciiText))
+print(asciiText)
+
+
+# After getting ASCII art, the file 'geckodriver.log' is created and we don't use it
+# so we delete it after finishing, if you want it just delete what's under this comment
+if os.path.isfile('geckodriver.log'):
+    os.remove('geckodriver.log')
