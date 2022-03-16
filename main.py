@@ -34,7 +34,7 @@ if args.asciiStyle == 'stylelist' and not args.asciiText:
     sys.exit()
 
 
-if args.asciiStyle not in webscrapGet.getFontList():
+if not webscrapGet.styleExists(args.asciiStyle):
     if args.asciiStyle == 'stylelist':
         errorText = termcolor.colored("[/!\\] To get the ASCII style list, use the command '[command] stylelist'\n", 'yellow')
         print(errorText)

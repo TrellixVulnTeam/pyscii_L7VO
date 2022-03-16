@@ -49,6 +49,12 @@ def getFontList() -> str():
     return fontList
 
 
+def styleExists(style : str) -> bool():
+    fontList = getFontList().split('\n')
+
+    return style in fontList
+
+
 def generateAscii(style : str, text : str) -> str():
     """Function that use previouses to generate ASCII art
 
