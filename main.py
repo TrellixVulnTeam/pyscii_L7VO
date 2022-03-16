@@ -45,8 +45,14 @@ if not webscrapGet.styleExists(args.asciiStyle):
     sys.exit(1)
 
 
+if not args.asciiText:
+    print()
+    sys.exit()
+
+
 asciiText = webscrapGet.generateAscii(style=args.asciiStyle, text=" ".join(args.asciiText))
 print(asciiText)
+print()
 
 
 # After getting ASCII art, the file 'geckodriver.log' is created and we don't use it
