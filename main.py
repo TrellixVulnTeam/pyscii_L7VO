@@ -21,7 +21,7 @@ parser.add_argument(
 parser.add_argument(
     'asciiText',
     nargs='*',
-    metavar='text'
+    metavar='text',
     default='',
     help='The text you want to convert to ASCII art'
 )
