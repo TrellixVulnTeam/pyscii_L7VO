@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser(
 
 parser.add_argument(
     'asciiStyle',
-    metavar='s',
+    metavar='style',
     type=str,
     help='The ASCII style you want, to see all styles run the command \'[command] stylelist\''
 )
@@ -21,6 +21,7 @@ parser.add_argument(
 parser.add_argument(
     'asciiText',
     nargs='*',
+    metavar='text'
     default='',
     help='The text you want to convert to ASCII art'
 )
