@@ -1,0 +1,17 @@
+If install.py didn't recognized your distribution, go to https://github.com/mozilla/geckodriver/releases, download the right archive and follow the tutorial for your OS :
+
+----------------
+LINUX / MAC OS :
+----------------
+
+Execute the following command :
+tar -C /usr/local/bin -xvf GECKODRIVER_FILE
+
+It will decompress the archive and put it in /usr/local/bin so selenium could find it
+
+
+---------
+WINDOWS :
+---------
+
+Go to https://github.com/mozilla/geckodriver/releases, download the right archive (for win32 or win64 depending on which you have),uncompress it and execute the program
