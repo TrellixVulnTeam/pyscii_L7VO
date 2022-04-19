@@ -4,6 +4,7 @@ import time
 import requests
 import subprocess
 
+import termcolor
 import selenium
 from selenium import webdriver
 
@@ -64,7 +65,8 @@ for distro in geckodriverLink.keys():
         break
 else:
     time.sleep(2)
-    print("[/!\\] Your OS has not been recognized, please see manually_install_geckodriver.txt\n")
+    errorText = termcolor.colored("[/!\\] Your OS has not been recognized, please see manually_install_geckodriver.txt\n", 'red')
+    print(errorText)
     sys.exit()
 
 
