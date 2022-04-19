@@ -2,6 +2,7 @@ import requests
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 import modules.urlGenerator as urlGenerator
 
@@ -25,7 +26,7 @@ def getAscii(siteURL : str):
     driver.get(siteURL)
     
     # Getting the ASCII art
-    asciiArt = driver.find_element_by_id("taag_output_text")
+    asciiArt = driver.find_element(By.id, "taag_output_text")
 
     # If no ASCII art has been got, the program will return an empty
     # string
