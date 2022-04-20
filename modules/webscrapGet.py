@@ -26,7 +26,7 @@ def getAscii(siteURL : str):
     driver.get(siteURL)
     
     # Getting the ASCII art
-    asciiArt = driver.find_element(By.id, "taag_output_text")
+    asciiArt = driver.find_element(By.ID, "taag_output_text")
 
     # If no ASCII art has been got, the program will return an empty
     # string
