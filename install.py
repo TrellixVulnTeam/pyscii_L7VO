@@ -54,7 +54,7 @@ def untarFile(file : str):
 
 
 if isGeckoInstalled():
-    print("Geckodriver is already installed on your system, exiting...")
+    print("[+] Geckodriver is already installed on your system, exiting...\n")
     os.remove('geckodriver.log')
     sys.exit()
 
