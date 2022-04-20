@@ -2,7 +2,4 @@ Here is PyScii, a Python script scraping from https://patorjk.com/software/taag/
 
 If you have a problem with this you can contact AinTea#0519 on Discord
 
-
-Here's what to do for installing :
-chmod +x make.sh
-./make.sh
+For installing the program, execute the command 'python3 install.py'
