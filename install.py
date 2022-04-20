@@ -1,8 +1,10 @@
 import os
 import sys
 import time
+import shutil
+import distro
+import tarfile
 import requests
-import subprocess
 
 import termcolor
 import selenium
@@ -25,21 +27,39 @@ print("""
 
 
 
+
+def downloadFile(link : str, output : str):
+    response = requests.get(link, allow_redirects=True)
+    
+    with open(output, 'wb') as f:
+        fileContent = response.content
+        f.write(fileContent)
+
+
 def isGeckoInstalled():
     try:
-        driver = webdriver.Firefox()
+        driverOptions = webdriver.FirefoxOptions()
+        driverOptions.headless = True
+        
+        driver = webdriver.Firefox(options=driverOptions)
         return True
     except selenium.common.exceptions.WebDriverException:
         return False
+
+
+def untarFile(file : str):
+    with tarfile.open(file, 'r') as tarFile:
+        tarFile.extractall('/usr/local/bin')
     
 
 
 if isGeckoInstalled():
     print("Geckodriver is already installed on your system, exiting...")
+    os.remove('geckodriver.log')
     sys.exit()
 
 
-linuxDistributionName = subprocess.check_output(['uname', '-r']).decode()
+linuxDistributionName = distro.name()
 
 
 geckodriverLink = {
@@ -59,9 +79,11 @@ geckodriverLink = {
 for distro in geckodriverLink.keys():
     link, filename = geckodriverLink[distro]
     
-    if distro.lower() in linuxDistributionName.lower():
-        subprocess.run(['wget', link])
-        subprocess.run(['sudo', 'tar', '-C', '/usr/local/bin/', '-xf', filename])
+    if distro.lower() in linuxDistributionName.lower():        
+        os.mkdir('Geckodriver')
+        
+        downloadFile(link, f"./Geckodriver/{filename}")
+        untarFile(f'./Geckodriver/{filename}')
         break
 else:
     time.sleep(2)
@@ -71,8 +93,8 @@ else:
 
 
 try:
+    shutil.rmtree('./Geckodriver')
     os.remove('geckodriver.log')
-    os.remove(filename)
 except FileNotFoundError:
     pass
 
