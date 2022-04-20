@@ -12,14 +12,15 @@ parser = argparse.ArgumentParser(
 )
 
 parser.add_argument(
-    'asciiStyle',
-    metavar='style',
+    '-s',
+    '--style',
     type=str,
     help='The ASCII style you want, to see all styles run the command \'[command] stylelist\''
 )
 
 parser.add_argument(
-    'asciiText',
+    '-t',
+    '--text',
     nargs='*',
     metavar='text',
     default='',
@@ -30,7 +31,7 @@ args = parser.parse_args()
 
 
 # To get the ASCII style list, use the command '[command] stylelist'
-if args.asciiStyle == 'stylelist' and not args.asciiText:
+if args.asciiStyle == 'stylelist' and not args.text:
     print(f"{webscrapGet.getFontList()}\n")
     sys.exit()
 
