@@ -24,7 +24,7 @@ def getAscii(siteURL : str):
     
     driver = webdriver.Firefox(options=driverOptions)
     driver.get(siteURL)
-    
+
     # Getting the ASCII art
     asciiArt = driver.find_element(By.ID, "taag_output_text")
 
@@ -44,7 +44,7 @@ def getFontList() -> str():
         str: The ASCII styles list
     """
 
-    with open('./modules/textPolices.txt', 'r') as f:
+    with open('./modules/stylelistFormatted.txt', 'r') as f:
         fontList = f.read()
     
     return fontList
