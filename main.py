@@ -47,7 +47,7 @@ elif args.style_list and (args.style or args.text):
 
 
 if not webscrapGet.styleExists(args.style):
-    if args.asciiStyle == 'stylelist':
+    if args.style == 'stylelist':
         errorText = termcolor.colored("[/!\\] To get the ASCII style list, use the command '[command] stylelist'\n", 'yellow')
         print(errorText)
         sys.exit(1)
