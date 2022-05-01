@@ -51,6 +51,10 @@ if not webscrapGet.styleExists(args.style):
         errorText = termcolor.colored("[/!\\] To get the ASCII style list, use the command '[command] stylelist'\n", 'yellow')
         print(errorText)
         sys.exit(1)
+    
+    if args.style == None:
+        parser.print_help()
+        sys.exit()
 
     errorText = termcolor.colored(f"[!] The style '{args.style}' doesn't exists\n", 'red')
     print(errorText)
