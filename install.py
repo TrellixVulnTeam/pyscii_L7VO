@@ -28,7 +28,7 @@ print("""
 
 
 
-def downloadFile(link : str, output : str):
+def downloadFile(link : str, output : str) -> :
     response = requests.get(link, allow_redirects=True)
     
     with open(output, 'wb') as f:
@@ -36,7 +36,7 @@ def downloadFile(link : str, output : str):
         f.write(fileContent)
 
 
-def isGeckoInstalled():
+def isGeckoInstalled() -> bool :
     try:
         driverOptions = webdriver.FirefoxOptions()
         driverOptions.headless = True
@@ -47,7 +47,7 @@ def isGeckoInstalled():
         return False
 
 
-def untarFile(file : str):
+def untarFile(file : str) -> None :
     with tarfile.open(file, 'r') as tarFile:
         tarFile.extractall('/usr/local/bin')
     
