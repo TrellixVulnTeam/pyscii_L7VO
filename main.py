@@ -38,7 +38,8 @@ args = parser.parse_args()
 
 # To verify if we only have '--style-list' as parameters
 if args.style_list and not (args.style or args.text):
-    print(f"{webscrapGet.getFontList()}\n")
+    webscrapGet.printFontList()
+    print()
     sys.exit()
 elif args.style_list and (args.style or args.text):
     errorText = termcolor.colored(f"[!] Invalid parameters\n", 'red')

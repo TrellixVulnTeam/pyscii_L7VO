@@ -1,5 +1,6 @@
 import requests
 
+import termcolor
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -37,7 +38,7 @@ def getAscii(siteURL : str):
     return asciiArt.text
 
 
-def getFontList() -> str():
+def printFontList() -> str():
     """Function that returns all ASCII styles availible
 
     Returns:
@@ -45,9 +46,18 @@ def getFontList() -> str():
     """
 
     with open('./modules/stylelistFormatted.txt', 'r') as f:
-        fontList = f.read()
+        categoryList = f.read().split('\n\n')
+        
     
-    return fontList
+    fontCategoryNames = ["Featured FIGlet Fonts\n", "ANSI FIGlet Fonts", "Regular FIGlet Fonts", "AOL FIGlet Fonts"]
+
+    for index, fontCategory in enumerate(categoryList):
+        fontName = " "*40 + "\x1b[1;32;40m" + fontCategoryNames[index] + "\x1b[0m"
+        categoryList[index] = f"{fontName}{categoryList[index]}"
+        
+    fontText = "\n\n\n".join(categoryList)
+
+    print(fontText)
 
 
 def styleExists(style : str) -> bool():
