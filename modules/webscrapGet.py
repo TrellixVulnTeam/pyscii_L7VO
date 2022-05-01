@@ -51,7 +51,10 @@ def getFontList() -> str():
 
 
 def styleExists(style : str) -> bool():
-    fontList = getFontList().split('\n')
+    with open('./modules/textPolices.txt', 'r') as f:
+        fileContent = f.read()
+    
+    fontList = fileContent.split('\n')
 
     return style in fontList
 
