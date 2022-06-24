@@ -28,7 +28,7 @@ print("""
 
 
 
-def downloadFile(link : str, output : str) -> :
+def downloadFile(link : str, output : str) -> None :
     response = requests.get(link, allow_redirects=True)
     
     with open(output, 'wb') as f:
