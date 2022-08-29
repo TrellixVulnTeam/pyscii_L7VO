@@ -46,7 +46,7 @@ if args.style_list and not (args.style or args.text):
 elif args.style_list and (args.style or args.text):
     errorText = termcolor.colored(f"[!] Invalid parameters\n", 'red')
     print(errorText)
-    sys.exit()
+    sys.exit(1)
 
 
 if not webscrapGet.styleExists(args.style):
@@ -72,7 +72,6 @@ if not args.text:
 try:
     asciiText = webscrapGet.generateAscii(style=args.style, text=" ".join(args.text))
     print(asciiText)
-    print()
 except KeyboardInterrupt:
     pass
 
